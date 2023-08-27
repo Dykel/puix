@@ -1,0 +1,44 @@
+1. install uione with wget "https://update.xui.one/XUI_1.5.12.zip" -O /tmp/XUI_1.5.12.zip
+2. cd in to tmp with cd /tmp
+3.unzip uione with unzip XUI_1.5.12.zip then run cmd ./install
+4.Once installed itll give you a url paste it in to a browser and leave it at licence page.
+
+installig uione crack
+
+1.ftp all files inside the .rar file to the folder /tmp on your server
+2.chmod the install.sh with this chmod -R 777 install.sh
+3.now run ./install.sh wait for it to finish
+4. go to your fresh panel and enjoy
+
+
+migrate xtreamui a xui
+
+XUI allows you to migrate from services with similar database structures.
+If you have confirmed your database is compatible with the migration system, you can migrate by restoring your backup to the xui_migrate database and running the build in XUI migration tool.
+
+
+It's usually better to do migration on a clean install.. however if you decide to use an existing install, XUI will wipe any tables in your XUI database that it finds data for in your migration database.
+
+
+When you're ready to begin, follow these steps (on v1.2.2 onwards):
+
+Upload your backup database to your XUI server via sftp. You can store it anywhere, for this example we'll assume /tmp/backup.sql
+Use the tools script to clear the existing migration database and restore your backup: /home/xui/tools migration "/tmp/backup.sql"
+Assuming no errors occured, begin migration: /home/xui/bin/php/bin/php /home/xui/includes/cli/migrate.php
+You will see an ongoing status of what is being migrated, once it has been completed you can log in to your system.
+
+After migration, there may be instances where you may not remember the username and password, or there isn't a valid access code in place to login to the system. If this happens, use tools to rescue you.
+
+Generate a rescue access code using: /home/xui/tools access
+Generate a rescue admin user using: /home/xui/tools user
+
+Once you're logged in, please ensure you change your access code and user account if you have used the rescue tools to enter.
+
+
+Your load balancers will display as offline, and all streams have been stopped automatically. Your next step is to reinstall the load balancers and start your streams manually once you have confirmed everything has migrated properly. You will also want to check the default XUI settings and set it up to your preference, as well as check the Main Server to ensure the details are correct as you expect them, add any domains or enable SSL if you require it.
+
+
+If you plan on installing load balancers without reinstalling the operating system on them, please ensure they're updated to Ubuntu 18.04 at the very least (20.10 preferable) and clear them of any existing systems, uninstall mysql or mariadb and remove any user accounts and incompatible packages such as libcurl3. You will find a tutorial for this on our forum written by another administrator.
+
+
+Thank you 
