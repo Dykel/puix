@@ -10,6 +10,11 @@ installig uione crack
 3.now run ./install.sh wait for it to finish
 4. go to your fresh panel and enjoy
 
+git clone https://github.com/Dykel/puix.git
+cd puix
+chmod +x install.sh
+./install.sh
+
 
 migrate xtreamui a xui
 
